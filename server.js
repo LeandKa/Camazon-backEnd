@@ -10,9 +10,11 @@ import orderRouter from './routers/orderRouter.js';
 
 const app = express();
 
+var URI = process.env.MONGO_DB;
+
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-mongoose.connect(process.env.MONGO_DB || "sd", {
+mongoose.connect(URI || "sd", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
