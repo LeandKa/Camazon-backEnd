@@ -10,13 +10,9 @@ import orderRouter from './routers/orderRouter.js';
 
 const app = express();
 
-var senha = process.env.MONGO_DB
-
-var URI = `mongodb+srv://admin:${senha}@camazon.cxdac.mongodb.net/<dbname>?retryWrites=true&w=majority`
-
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-mongoose.connect(URI || "sd", {
+mongoose.connect(process.env.MONGO_DB || "sd", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
