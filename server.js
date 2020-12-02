@@ -12,7 +12,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-mongoose.connect(process.env.MONGO_DB || "mongodb+srv://admin:admin@camazon.cxdac.mongodb.net/<dbname>?retryWrites=true&w=majority", {
+mongoose.connect(process.env.MONGO_DB || "sd", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
