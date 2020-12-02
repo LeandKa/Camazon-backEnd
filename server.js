@@ -12,7 +12,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-mongoose.connect(process.env.MONGO_DB, {
+mongoose.connect(process.env.MONGO_DB || "mongodb+srv://admin:admin@camazon.cxdac.mongodb.net/<dbname>?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
@@ -38,5 +38,5 @@ app.use((err, req, res, next) => {
 })
 
 app.listen(5000, () => {
-    console.log('IS rEAD')
+    console.log('Estou sendo lido')
 })
