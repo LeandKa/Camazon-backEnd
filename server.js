@@ -37,6 +37,6 @@ app.use((err, req, res, next) => {
     res.status(500).send({ messag: err.message });
 })
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log('Estou sendo lido')
 })
