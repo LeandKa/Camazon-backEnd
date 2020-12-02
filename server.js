@@ -10,7 +10,9 @@ import orderRouter from './routers/orderRouter.js';
 
 const app = express();
 
-var URI = process.env.MONGO_DB;
+var senha = process.env.MONGO_DB
+
+var URI = `mongodb+srv://admin:${senha}@camazon.cxdac.mongodb.net/<dbname>?retryWrites=true&w=majority`
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
