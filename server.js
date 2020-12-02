@@ -37,6 +37,6 @@ app.use((err, req, res, next) => {
     res.status(500).send({ messag: err.message });
 })
 
-app.listen(5000, () => {
+app.listen(3000, () => {
     console.log('Estou sendo lido')
 })
